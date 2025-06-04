@@ -1,0 +1,45 @@
+===== Cara Menjalankan Skrip ETL Pipeline =====
+
+1. Pastikan Python dan dependensi sudah terinstall:
+   Jalankan perintah ini di terminal pada root folder proyek:
+   pip install -r requirements.txt
+
+2. Jalankan ETL pipeline dengan perintah:
+   python main.py
+
+   - Proses extract akan mengambil data dari website.
+   - Proses transform akan membersihkan dan mengubah data.
+   - Proses load akan menyimpan data ke database PostgreSQL dan file CSV.
+
+---
+
+===== Cara Menjalankan Unit Test =====
+
+1. Pastikan pytest sudah terinstall (biasanya sudah termasuk di requirements.txt).
+
+2. Jalankan perintah ini di root folder proyek untuk menjalankan semua unit test:
+   pytest tests/
+
+   Atau dengan unittest:
+   python -m unittest discover tests
+
+---
+
+===== Cara Menjalankan Test Coverage =====
+
+1. Jalankan perintah berikut untuk melihat laporan coverage secara singkat di terminal:
+   pytest --cov=etl tests/
+   atau 
+   python -m pytest tests
+
+    # Menjalankan test coverage pada folder tests
+    coverage run -m pytest tests
+
+2. Untuk laporan HTML (visual) coverage, jalankan:
+   pytest --cov=etl --cov-report=html tests/
+
+3. Setelah selesai, buka file `htmlcov/index.html` di browser untuk melihat laporan coverage secara interaktif.
+
+---
+
+Pastikan database PostgreSQL sudah berjalan dan konfigurasi koneksi di `main.py` sesuai dengan environment Anda.
