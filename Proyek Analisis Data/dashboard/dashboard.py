@@ -2,11 +2,16 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('order_df.csv', parse_dates=['order_purchase_timestamp'])
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # folder tempat dashboard.py
+    csv_path = os.path.join(BASE_DIR, 'order_df.csv')      # file di folder yang sama
+
+    df = pd.read_csv(csv_path, parse_dates=['order_purchase_timestamp'])
+
     return df
 
 df = load_data()
