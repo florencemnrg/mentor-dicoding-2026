@@ -1,14 +1,7 @@
 import time
-import os
 from sqlalchemy import create_engine
 
-def save_data_with_retry(df, engine, table_name, max_retries=5):
-    
-    # Simpan ke CSV di folder results
-    csv_path = f'products.csv'
-    df.to_csv(csv_path, index=False)
-    print(f"Data juga disimpan ke file CSV: {csv_path}")
-    
+def save_to_postgresql_with_retry(df, engine, table_name, max_retries=5):
     attempt = 0
     delay = 1
     while attempt < max_retries:
