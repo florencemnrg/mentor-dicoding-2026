@@ -1,0 +1,5 @@
+Streamlit public deploying URL:
+https://mentor-dicoding-2026-ecommerce-viz.streamlit.app/
+
+Github Repo URL:
+https://github.com/florencemnrg/mentor-dicoding-2026/tree/main/Proyek%20Analisis%20Data
